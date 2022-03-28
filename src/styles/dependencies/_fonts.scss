@@ -1,0 +1,34 @@
+///////////////////////////////
+//       Font Imports        //
+///////////////////////////////
+@font-face {
+  font-family: "Work Sans";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Work Sans"),
+       url('/media/fonts/worksans-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Work Sans Bold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Work Sans Bold"),
+       url('/media/fonts/worksans-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Playfair";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Playfair"),
+       url('/media/fonts/playfairdisplay-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Playfair Bold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Playfair Bold"),
+       url('/media/fonts/playfairdisplay-bold-webfont.woff') format('woff');
+}

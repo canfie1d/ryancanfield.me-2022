@@ -1,0 +1,92 @@
+@use './functions';
+@use '../dependencies/media-queries' as mq;
+
+.h1 {
+  font-family: var(--playfair-bold);
+  color: var(--display-color);
+  line-height: 1.2;
+  font-size: 1.75rem;
+  color: var(--off-white);
+
+  @media screen and (min-width: mq.$media-small) {
+    font-size: 2.625rem;
+  }
+
+  @media screen and (min-width: mq.$media-medium) {
+    font-size: 3.5rem;
+  }
+}
+
+.h2 {
+  font-family: var(--playfair);
+  color: var(--display-color);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--off-white);
+
+  @media screen and (min-width: mq.$media-small) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (min-width: mq.$media-medium) {
+    font-size: 3.25rem;
+  }
+}
+
+.h3 {
+  font-family: var(--playfair-bold);
+  color: var(--display-color);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.h4 {
+  font-family: var(--work-bold);
+  font-weight: 400;
+  color: var(--body-color);
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.p {
+  font-family: var(--work);
+  font-weight: 400;
+  color: var(--body-color);
+  font-size: 1.125rem;
+  max-width: 43.75rem;
+  line-height: 1.5;
+
+  &:not(:last-child) {
+    margin-bottom: 3.75rem;
+  }
+}
+
+.a {
+  color: var(--secondary);
+  text-decoration-skip-ink: auto;
+  white-space: nowrap;
+  cursor: pointer;
+  cursor: url(/media/images/pointer.png) 2 2, pointer;
+
+  &:focus {
+    outline: 1px solid var(--primary);
+    outline-offset: 4px;
+  }
+
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.p,
+.a {
+  &::selection {
+    background: var(--secondary);
+  }
+  &::-moz-selection {
+    background: var(--secondary);
+  }
+}

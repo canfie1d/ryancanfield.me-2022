@@ -1,0 +1,39 @@
+@use '../dependencies/helpers';
+
+.recommendation {
+  width: 100%;
+  background: var(--tertiary);
+  height: 350px;
+  padding: 2.5rem 1.25rem;
+
+  &.recommendation--auto {
+    height: auto;
+  }
+
+  .h3 {
+    color: var(--white);
+    font-size: 1.875rem;
+    margin: 0;
+  }
+
+  .recommendation__content {
+    margin: auto;
+    max-width: 700px;
+  }
+
+  .p {
+    margin-bottom: 0.625rem;
+
+    &.p--small {
+      font-size: 1rem;
+    }
+
+    &.p--clamped {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+    }
+  }
+}

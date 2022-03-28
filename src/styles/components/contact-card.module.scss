@@ -1,0 +1,76 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+.contact-card {
+  margin: 3.75rem auto;
+  padding: 3.75rem;
+
+  .h3 {
+    font-family: var(--playfair);
+    color: var(--display-color);
+    max-width: 43.75rem;
+    margin: 0 auto 3.75rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .contact-card__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 43.75rem;
+    margin: auto;
+
+    .contact-card__item {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3.75rem;
+      transform: scale(1);
+      transition: transform 200ms ease-out;
+
+      &:hover {
+        transform: scale(1.1);
+
+      }
+
+      .button {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: var(--work-bold);
+        font-weight: 400;
+        color: var(--body-color);
+        background: var(--secondary);
+        text-decoration: none;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+        padding: 1.25rem;
+        text-transform: uppercase;
+        color: var(--white);
+        transition: box-shadow 200ms ease-out,
+                    background 200ms ease-out;
+
+        &:hover {
+          $secondary: #D9272F;
+          outline: none;
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
+          background: #{functions.shade($secondary, 10%)};
+        }
+
+        @media screen and (min-width: mq.$media-small) {
+          padding: 1.25rem 2.5rem;
+        }
+      }
+
+      &.contact-card__item__email {
+        flex: 0 0 100%;
+
+        .icon {
+          margin-right: 0.625rem;
+        }
+
+      }
+    }
+  }
+
+}

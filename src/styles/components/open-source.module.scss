@@ -1,0 +1,48 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+.open-source__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .open-source__item {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.25rem 0 0;
+    padding-bottom: 1.25rem;
+    flex: 1 0 100%;
+
+    @media screen and (min-width: mq.$media-small) and (max-width: mq.$media-large) {
+      flex: 1 1 50%;
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: 2px solid var(--tertiary);
+    }
+
+    .open-source__header {
+      flex: 0 0 100%;
+
+      .h4 {
+        $primary: #202C39;
+        color: functions.tint($primary, 30%);
+      }
+    }
+
+    a {
+      flex: 0 0 auto;
+      transform: scale(1);
+      transition: transform 200ms ease-out;
+
+      &:not(:last-of-type) {
+        margin-right: 3.75rem;
+      }
+
+      &:hover {
+        outline: none;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

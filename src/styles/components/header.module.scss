@@ -1,0 +1,38 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+$headerHeight: 5rem;
+
+.header {
+  position: relative;
+  width: 100%;
+  height: $headerHeight;
+  background: var(--primary-dark);
+  border-top: 1px solid var(--primary);
+
+  @media screen and (min-width: mq.$media-small) {
+    border-top: none;
+    padding: 1.25rem 0.625rem;
+    width: $headerHeight;
+    height: 100vh;
+  }
+
+  .h1 {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 1.25rem;
+    left: 0;
+    transform: rotate(-90deg);
+    font-family: var(--playfair-bold);
+    color: var(--display-color);
+    font-size: 28px;
+    line-height: $headerHeight;
+    white-space: nowrap;
+    color: var(--primary);
+
+    @media screen and (min-width: mq.$media-small) {
+      display: block;
+    }
+  }
+}

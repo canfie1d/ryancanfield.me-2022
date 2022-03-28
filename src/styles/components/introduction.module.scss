@@ -1,0 +1,74 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(10px);
+    opacity: .01;
+  }
+  90%{
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  66% {
+    transform: translateY(0);
+  }
+  82.5% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 5rem);
+  padding: 1.25rem;
+  background: var(--primary-dark);
+
+  &.introduction--hintNeeded {
+    animation: bump 600ms ease;
+    animation-fill-mode: forwards;
+  }
+
+  @media screen and (min-width: mq.$media-small) {
+    height: 100vh;
+    padding: 3.75rem;
+  }
+
+  .h1,
+  .h2 {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  .h1 {
+    animation: fadeIn 1190ms ease-out 100ms;
+    animation-fill-mode: forwards;
+  }
+
+  .h2 {
+    max-width: 16.1875rem;
+    animation: fadeIn 985ms ease-out 200ms;
+    animation-fill-mode: forwards;
+
+    @media screen and (min-width: mq.$media-small) {
+      max-width: 31.375rem;
+    }
+  }
+}

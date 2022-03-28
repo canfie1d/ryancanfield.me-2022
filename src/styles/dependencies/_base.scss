@@ -1,0 +1,125 @@
+@use './functions';
+
+:root {
+  --rem-base: 16;
+
+  // COLORS
+  --white: #fff;
+  --black: #000;
+
+  --gray--050: #F2F2F2;
+  --gray--100: #E5E5E5;
+  --gray--200: #CDCDCD;
+  --gray--300: #B3B3B3;
+  --gray--400: #999999;
+  --gray--500: #7F7F7F;
+  --gray--600: #666666;
+  --gray--700: #4D4D4D;
+  --gray--800: #333333;
+  --gray--900: #1A1A1A;
+
+
+  // Thematic colors
+  --primary: #202C39;
+  --secondary: #D9272F;
+  --tertiary: #bbc9c9;
+  --off-white: #fbfbfb;
+  --primary-dark: #{functions.shade(#202C39, 50%)};
+  --orange: #f4a026;
+  --blue: #61acd2;
+
+  // Status colors
+  --status--success: #25d785;
+  --status--warning: #f27225;
+  --status--error: #D72638;
+
+  // Typography
+  --display-color: var(--primary);
+  --body-color: var(--primary);
+
+  // FONTS
+  --helvetica: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  --work: 'Work Sans', var(--helvetica);
+  --work-bold: 'Work Sans Bold', var(--helvetica);
+
+  --palatino: 'Palatino', Garamond, 'Bookman', 'Avant Garde';
+  --playfair: 'Playfair', var(--palatino);
+  --playfair-bold: 'Playfair Bold', var(--palatino);
+}
+
+html {
+  font-size: var(--rem-base);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  cursor: default;
+  cursor: url(/media/images/cursor.png) 2 2, default;
+  background: var(--primary-dark);
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+@keyframes aos {
+  0% {
+    opacity: .01;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.waypoint {
+  opacity: 0;
+
+  &.waypoint--inView {
+    animation: 500ms aos ease;
+    animation-fill-mode: forwards;
+
+    &:nth-of-type(even) {
+      animation: 500ms aos ease 300ms;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.fade {
+
+  &.fade-enter {
+    opacity: 0;
+  }
+
+  &.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in 500ms;
+  }
+
+  &.fade-exit {
+    opacity: 1;
+  }
+
+  &.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+  }
+}

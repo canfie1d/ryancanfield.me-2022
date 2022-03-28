@@ -1,0 +1,51 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+.demo__link {
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+  white-space: pre-wrap;
+
+  .demo__link__column {
+    position: relative;
+    width: 100%;
+
+    .h3 {
+      font-family: var(--playfair);
+      color: var(--display-color);
+      margin-bottom: 0;
+    }
+
+    &:first-of-type {
+      min-height: 108px;
+      padding: 0.625rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      @media screen and (min-width: mq.$media-small) {
+        padding: 1.25rem;
+      }
+    }
+
+    &:last-of-type {
+      min-height: 200px;
+    }
+  }
+
+  .demo__heart-container {
+    display: flex;
+
+    .icon {
+      padding-right: 0.3125rem;
+    }
+
+    .demo__heart__quantity {
+      font-family: var(--work);
+      font-weight: 400;
+      color: var(--secondary);
+    }
+  }
+}

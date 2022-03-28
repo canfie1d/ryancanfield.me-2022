@@ -1,0 +1,68 @@
+@use '../dependencies/media-queries' as mq;
+@use '../dependencies/functions';
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--work-bold);
+  font-weight: 400;
+  color: var(--white);
+  background: var(--secondary);
+  text-decoration: none;
+  border: none;
+  cursor: url('/media/images/pointer.png') 2 2, pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+  text-transform: uppercase;
+  transition: box-shadow 200ms ease-out, background 200ms ease-out;
+
+  &.button--small {
+    padding: 0.625rem;
+  }
+
+  &.button--inline {
+    display: inline;
+  }
+
+  &.button--transparent {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  &.button--invisible {
+    background: transparent;
+    box-shadow: none;
+    text-transform: none;
+    text-align: left;
+    padding: 0;
+    display: block;
+  }
+
+  &:focus {
+    outline: 1px solid var(--primary);
+    outline-offset: 1px;
+  }
+
+  &:hover:not(.button--invisible) {
+    $secondary: #D9272F;
+    outline: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    background: #{functions.shade($secondary, 10%)};
+  }
+
+  @media screen and (min-screen: mq.$media-small) {
+    padding: 1.25rem 2.5rem;
+  }
+
+  &.button--secondary {
+    background: var(--white);
+    font-family: var(--work-bold);
+    font-weight: 400;
+    color: var(--secondary);
+
+    &:hover {
+      color: var(--white);
+    }
+  }
+}

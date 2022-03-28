@@ -1,0 +1,33 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+.footer {
+  background: var(--primary-dark);
+  padding: 1.25rem;
+
+  @media screen and (min-width: mq.$media-small) {
+    padding: 1.25rem 2.5rem;
+  }
+
+  @media screen and (min-width: mq.$media-medium) {
+    padding: 1.25rem 3.75rem;
+  }
+
+  .a {
+    font-family: var(--work);
+    font-weight: 400;
+    color: var(--off-white);
+    font-size: 0.75rem;
+
+    &:hover,
+    &:focus {
+      outline: 1px solid var(--off-white);
+    }
+  }
+  span {
+    font-family: var(--work);
+    font-weight: 400;
+    color: var(--off-white);
+    font-size: 0.75rem;
+  }
+}

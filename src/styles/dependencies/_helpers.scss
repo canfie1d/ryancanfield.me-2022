@@ -1,0 +1,102 @@
+.max-width--100 {
+  max-width: 100%;
+}
+
+.margin-top--large {
+  margin-top: calc(6.25rem + 26px);
+}
+
+.margin--auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.display--block {
+  display: block;
+}
+
+.shadow {
+  box-shadow: 0 1px 1px rgba(110, 110, 110, 0.12),
+    0 2px 2px rgba(110, 110, 110, 0.12), 0 4px 4px rgba(110, 110, 110, 0.12),
+    0 8px 8px rgba(110, 110, 110, 0.12), 0 16px 16px rgba(110, 110, 110, 0.12);
+}
+
+.browser {
+  position: relative;
+  border-top: 2em solid var(--orange);
+  border-right: 2px solid var(--orange);
+  border-bottom: 1em solid var(--orange);
+  border-left: 2px solid var(--orange);
+  border-radius: 1em;
+  max-width: 100%;
+
+  @extend .shadow;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -1.275em;
+    width: 0.75em;
+    height: 0.75em;
+    background: var(--off-white);
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+  }
+  &::before {
+    left: 0.5em;
+  }
+  &::after {
+    left: 1.625em;
+  }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(var(--primary), 0.6);
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+
+  & > * {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 80vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  margin-left: -1px;
+}
+
+.hr {
+  width: 3.75rem;
+  height: 2px;
+  background: var(--tertiary);
+  margin-top: 3.75rem;
+  margin-bottom: 1.25rem;
+
+  &.hr--full {
+    width: 100%;
+    margin: 1.25rem 0 2.5rem;
+  }
+}

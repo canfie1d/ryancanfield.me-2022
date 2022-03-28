@@ -1,0 +1,33 @@
+.project {
+  padding: 1.25rem;
+  margin-bottom: 3.75rem;
+}
+
+.project__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 0;
+  margin-bottom: .625rem;
+
+  a {
+    color: var(--primary);
+    font-family: var(--playfair);
+    font-size: 0.875rem;
+
+    &:visited {
+      color: var(--secondary);
+    }
+  }
+}
+
+.project__image {
+  max-width: 100%;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.project__link {
+  margin: 1.25rem 0.625rem 0.625rem;
+}

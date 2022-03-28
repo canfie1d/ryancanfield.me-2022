@@ -1,0 +1,49 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+.tag__item {
+  position: relative;
+  display: inline-block;
+  background: var(--primary);
+  margin-bottom: 0.625rem;
+  padding: 0.625rem;
+  font-family: var(--work);
+  font-weight: 400;
+  color: var(--white);
+  text-shadow: 0 0 0 var(--white);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+
+  &.tag__item--secondary {
+    background: var(--orange);
+    border-radius: 17px;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 0.625rem;
+  }
+
+  &.tag__item--hasLink {
+    padding: 0;
+  }
+
+  @media screen and (min-width: mq.$media-small) {
+    padding: 0.625rem 1.875rem;
+  }
+}
+
+.tag__link {
+  display: block;
+  padding: 0.625rem;
+  font-family: var(--work);
+  font-weight: 400;
+  color: var(--white);
+  text-shadow: 0 0 0 var(--white);
+  text-decoration: none;
+
+  @media screen and (min-width: mq.$media-small) {
+    padding: 0.625rem 1.875rem;
+  }
+}

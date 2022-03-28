@@ -1,0 +1,74 @@
+@use '../dependencies/functions';
+@use '../dependencies/media-queries' as mq;
+
+.l {
+  position: relative;
+
+  .l--leftColumn {
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: mq.$media-small) {
+      width: calc(100% - 5rem);
+    }
+  }
+
+  .l--rightColumn {
+    position: fixed;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    @media screen and (min-width: mq.$media-small) {
+      top: 0;
+      left: auto;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  padding: 3.75rem 1.25rem 5rem;
+  min-height: 100vh;
+  background: var(--white);
+
+  @media screen and (min-width: mq.$media-small) {
+    padding: 3.75rem 2.5rem 7.5rem;
+  }
+
+  @media screen and (min-width: mq.$media-medium) {
+    padding: 3.75rem 3.75rem 7.5rem;
+  }
+}
+
+.content__split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .content__split__column {
+    flex: 1 1 100%;
+  }
+
+  @media screen and (min-width: mq.$media-large) {
+  .content__split__column {
+      flex: 1 1 50%;
+
+      &:nth-of-type(odd) {
+        padding-right: 3.75rem;
+      }
+
+      &:nth-of-type(even) {
+        padding-left: 3.75rem;
+      }
+
+      &.content__split__column--full {
+        flex: 1 0 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
