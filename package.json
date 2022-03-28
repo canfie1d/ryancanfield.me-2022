@@ -4,7 +4,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "netlify dev",
+    "dev": "next dev",
+    "netlify": "netlify dev",
     "build": "next build",
     "start": "next start"
   },
@@ -36,6 +37,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "netlify-cli": "^9.13.6",
     "sass": "^1.49.9"
   }
 }
